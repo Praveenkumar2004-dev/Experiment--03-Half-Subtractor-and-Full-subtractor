@@ -46,19 +46,34 @@ RegisterNumber:212222230108
 
 # HALF SUBTRACTOR:
 ```
-module exp3(output B,D, input X,Y);
-assign D = (X ^ Y);
-assign B = (~X & Y);
+/*
+Program to design a half subtractor circuit and verify its truth table in quartus using Verilog programming.
+Developed by: Praveen Kumar S
+RegisterNumber:  212222230108
+*/
+module half_sub(x,y,d,b);
+input x,y;
+output d,b;
+wire x1;
+xor(d,a,b);
+not(x1,x);
+and(b,x1,y);
 endmodule
 ```
 
 # FULL SUBTRACTOR:
 ```
-module exp3(X,Y,Z,B,D);
-input X,Y,Z;
-output B,D;
-assign D = (X^Y^Z);
-assign B = (~X&(Y^Z)|(Y&Z));
+module full_sub(a,b,c,d,bo);
+input a,b,c;
+output d,bo;
+wire w1,w2,w3,w4,w5;
+xor(w1,b,c);
+xor(d,w1,a);
+not(w2,b);
+and(w5,w2,c);
+not(w3,w1);
+and(w4,w2,a);
+or(bo,w4,w5);
 endmodule
 ```
 
